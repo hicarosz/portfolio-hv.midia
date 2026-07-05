@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HV Mídia — Fotografia &amp; Filmmaking</title>
+<meta name="description" content="HV Mídia é um estúdio de fotografia e filmmaking focado em contar histórias com imagens cinematográficas e atemporais.">
+
+<!-- =========================================================================
+     EDIT SOCIAL PREVIEW: change the og:title / og:description / og:image
+     if you want a custom card when this site is shared on social media.
+     ========================================================================= -->
+<meta property="og:title" content="HV Mídia — Fotografia & Filmmaking">
+<meta property="og:description" content="Estúdio de fotografia e filmmaking. Imagens que contam histórias.">
+<meta property="og:image" content="assets/images/og-image.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<!-- Google Fonts: Poppins (only font used across the whole site) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================================================================
+     NAVIGATION
+     - Logo text/mark: edit "HV Mídia" text or swap assets/icons/favicon.svg
+     - Nav links: point to the section ids below (#portfolio, #about, #contact)
+     - Instagram link: replace href="#" with your real profile URL
+     ========================================================================= -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo" aria-label="HV Mídia — início">
+      <img src="assets/icons/favicon.svg" alt="" width="30" height="30">
+      HV MÍDIA
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#portfolio">Portfólio</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+    </nav>
+
+    <div class="nav__social">
+      <!-- INSTAGRAM LINK: replace href="#" below with your Instagram URL -->
+      <a href="#" target="_blank" rel="noopener" aria-label="Instagram da HV Mídia">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Mobile menu toggle (JS adds/removes .is-open on .nav) -->
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================================================
+     HERO
+     - Edit headline / subtitle text directly below.
+     - Background is a pure-CSS animated gradient (.blob elements in style.css)
+       so there is zero extra JS or image weight here.
+     ========================================================================= -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="blob"></span>
+    <span class="blob"></span>
+    <span class="blob"></span>
+  </div>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="container hero__content">
+    <p class="hero__eyebrow">Estúdio de Fotografia &amp; Filmmaking</p>
+    <h1 class="hero__title">Histórias contadas<br><em>em luz e movimento.</em></h1>
+    <p class="hero__subtitle">
+      HV Mídia transforma momentos em imagens atemporais — da fotografia autoral
+      a produções audiovisuais cinematográficas.
+    </p>
+    <div class="hero__actions">
+      <a href="#portfolio" class="btn btn--primary">Ver Portfólio</a>
+      <a href="#contact" class="btn btn--ghost">Solicitar Orçamento</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- =========================================================================
+     PORTFOLIO
+     Two tabs: Photography and Filmmaking. Each grid supports unlimited items.
+
+     >>> TO ADD A NEW PHOTOGRAPHY CARD <<<
+     Duplicate one <article class="card"> block inside #grid-photo and:
+       1. Change the background image path in <img class="card__img" src="...">
+       2. Change the alt text
+       3. Change .card__category, .card__title and .card__desc text
+
+     >>> TO ADD A NEW FILMMAKING (VIDEO) CARD <<<
+     Duplicate one <article class="card card--video"> block inside #grid-film and:
+       1. Change the poster image (<img class="card__img">)
+       2. Change the <source src="..."> path to your .mp4 file
+       3. Change category / title / description text
+     ========================================================================= -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section__header reveal">
+      <div>
+        <p class="eyebrow">Portfólio</p>
+        <h2 class="section__title">Trabalhos selecionados</h2>
+      </div>
+      <p class="section__desc">Uma curadoria de projetos fotográficos e audiovisuais produzidos pela HV Mídia.</p>
+    </div>
+
+    <!-- Tabs switch which grid below is visible. JS toggles [hidden]. -->
+    <div class="tabs reveal" role="tablist" aria-label="Categorias do portfólio">
+      <button class="tabs__btn is-active" role="tab" aria-selected="true" aria-controls="grid-photo" data-tab="photo">Fotografia</button>
+      <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="grid-film" data-tab="film">Filmmaking</button>
+    </div>
+
+    <!-- ============================= PHOTOGRAPHY GRID ============================= -->
+    <div class="portfolio-grid reveal" id="grid-photo" role="tabpanel">
+
+      <!-- PHOTO CARD 1 — duplicate this <article> to add more photography items -->
+      <article class="card" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/project01.jpg" alt="Ensaio fotográfico editorial em estúdio">
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__body">
+          <span class="card__category">Editorial</span>
+          <h3 class="card__title">Luz Suspensa</h3>
+          <p class="card__desc">Ensaio editorial em estúdio explorando contraste e sombra.</p>
+        </div>
+      </article>
+
+      <!-- PHOTO CARD 2 -->
+      <article class="card" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/project02.jpg" alt="Retrato artístico em luz natural">
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__body">
+          <span class="card__category">Retrato</span>
+          <h3 class="card__title">Rosto e Silêncio</h3>
+          <p class="card__desc">Série de retratos em luz natural, tons neutros e composição minimalista.</p>
+        </div>
+      </article>
+
+      <!-- PHOTO CARD 3 -->
+      <article class="card" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/project03.jpg" alt="Fotografia de casamento ao entardecer">
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__body">
+          <span class="card__category">Casamento</span>
+          <h3 class="card__title">Entre Votos</h3>
+          <p class="card__desc">Cobertura completa de casamento com direção de luz natural.</p>
+        </div>
+      </article>
+
+      <!-- PHOTO CARD 4 -->
+      <article class="card" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/project04.jpg" alt="Fotografia de produto e still life">
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__body">
+          <span class="card__category">Still Life</span>
+          <h3 class="card__title">Objeto Puro</h3>
+          <p class="card__desc">Still life comercial com iluminação controlada em estúdio.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============================== FILMMAKING GRID ============================== -->
+    <div class="portfolio-grid reveal" id="grid-film" role="tabpanel" hidden>
+
+      <!-- VIDEO CARD 1 — duplicate this <article> to add more filmmaking items.
+           Behavior: shows the poster image; on hover/tap it fades into the
+           looping muted video, and returns to the poster on mouse-leave /
+           tap-outside. All handled by script.js — no config needed here. -->
+      <article class="card card--video" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/film01-thumb.jpg" alt="Capa do curta institucional Origem">
+          <video class="card__video" muted loop playsinline preload="none" poster="assets/images/film01-thumb.jpg">
+            <source src="assets/videos/film01.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="card__body">
+          <span class="card__category">Institucional</span>
+          <h3 class="card__title">Origem</h3>
+          <p class="card__desc">Curta institucional sobre o processo criativo de uma marca autoral.</p>
+        </div>
+      </article>
+
+      <!-- VIDEO CARD 2 -->
+      <article class="card card--video" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/film02-thumb.jpg" alt="Capa do videoclipe Maré">
+          <video class="card__video" muted loop playsinline preload="none" poster="assets/images/film02-thumb.jpg">
+            <source src="assets/videos/film02.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="card__body">
+          <span class="card__category">Videoclipe</span>
+          <h3 class="card__title">Maré</h3>
+          <p class="card__desc">Videoclipe conceitual gravado entre estúdio e locação externa.</p>
+        </div>
+      </article>
+
+      <!-- VIDEO CARD 3 -->
+      <article class="card card--video" tabindex="0">
+        <div class="card__media">
+          <img class="card__img" src="assets/images/film03-thumb.jpg" alt="Capa do documentário Ofício">
+          <video class="card__video" muted loop playsinline preload="none" poster="assets/images/film03-thumb.jpg">
+            <source src="assets/videos/film03.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card__overlay" aria-hidden="true"></div>
+        <div class="card__tint" aria-hidden="true"></div>
+        <div class="card__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="card__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="card__body">
+          <span class="card__category">Documentário</span>
+          <h3 class="card__title">Ofício</h3>
+          <p class="card__desc">Mini-documentário sobre artesãos locais e seus processos.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     ABOUT
+     - Edit the paragraph text and stats numbers below.
+     - Swap assets/images/about.jpg for a real studio / behind-the-scenes photo.
+     ========================================================================= -->
+<section class="section about-section" id="about">
+  <div class="container about">
+    <div class="about__media reveal">
+      <img src="assets/images/about.jpg" alt="Bastidores de um set de filmagem da HV Mídia" loading="lazy">
+    </div>
+    <div class="about__text reveal">
+      <p class="eyebrow">Sobre a HV Mídia</p>
+      <h2 class="section__title">Imagem com intenção, do primeiro clique ao corte final.</h2>
+      <p>
+        A HV Mídia nasceu da vontade de contar histórias reais através de uma estética
+        cuidadosa e cinematográfica. Unimos fotografia autoral e produção audiovisual
+        para criar imagens que comunicam identidade — para marcas, casais e projetos pessoais.
+      </p>
+      <p>
+        Cada projeto é tratado como uma peça única: da direção de arte à entrega final,
+        cuidamos de cada detalhe para que sua história seja contada com autenticidade.
+      </p>
+      <div class="about__stats">
+        <div>
+          <div class="about__stat-number">150+</div>
+          <div class="about__stat-label">Projetos entregues</div>
+        </div>
+        <div>
+          <div class="about__stat-number">8</div>
+          <div class="about__stat-label">Anos de experiência</div>
+        </div>
+        <div>
+          <div class="about__stat-number">100%</div>
+          <div class="about__stat-label">Projetos autorais</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     CONTACT
+     - WhatsApp / Instagram links: replace href="#" with real URLs.
+     - Email: replace the placeholder address.
+     ========================================================================= -->
+<section class="section contact" id="contact">
+  <div class="hero__bg" aria-hidden="true" style="opacity:.6">
+    <span class="blob" style="width:32vw;height:32vw;top:10%;left:50%;transform:translateX(-50%);background:radial-gradient(circle, var(--color-primary), transparent 70%);"></span>
+  </div>
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="eyebrow" style="justify-content:center;">Vamos conversar</p>
+    <h2 class="contact__title">Pronto para transformar sua ideia em imagem?</h2>
+    <p class="contact__desc">Conte um pouco sobre seu projeto e retornaremos com uma proposta personalizada.</p>
+
+    <div class="contact__actions">
+      <!-- WHATSAPP LINK: replace href="#" with https://wa.me/55XXXXXXXXXXX -->
+      <a href="#" target="_blank" rel="noopener" class="btn btn--primary">Falar no WhatsApp</a>
+      <a href="mailto:contato@hvmidia.com" class="btn btn--ghost">contato@hvmidia.com</a>
+    </div>
+
+    <div class="contact__channels">
+      <a href="#" target="_blank" rel="noopener" class="channel">
+        <span class="channel__icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor"/></svg>
+        </span>
+        <span class="channel__label">Instagram</span>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="channel">
+        <span class="channel__icon">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.35.68 4.55 1.86 6.4L4 29l7.77-1.8a11.94 11.94 0 0 0 4.25.78c6.63 0 12.02-5.4 12.02-12.02C28.04 8.4 22.65 3 16.02 3zm0 21.7c-1.34 0-2.63-.26-3.85-.76l-.28-.11-4.6 1.07 1.1-4.48-.19-.29a9.5 9.5 0 0 1-1.47-5.1c0-5.3 4.31-9.6 9.6-9.6a9.55 9.55 0 0 1 6.79 2.81 9.55 9.55 0 0 1 2.81 6.79c0 5.3-4.31 9.6-9.6 9.6l.69.07zm5.27-7.19c-.29-.15-1.7-.84-1.96-.94-.26-.1-.46-.14-.65.14-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.7-1.59-1.98-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.56-.89-2.14-.24-.57-.48-.49-.65-.5-.17-.01-.36-.01-.55-.01-.19 0-.5.07-.76.36-.26.29-1 1-1 2.42s1.02 2.8 1.16 2.99c.14.19 2 3.06 4.85 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/></svg>
+        </span>
+        <span class="channel__label">WhatsApp</span>
+      </a>
+      <a href="mailto:contato@hvmidia.com" class="channel">
+        <span class="channel__icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="channel__label">Email</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     FOOTER
+     ========================================================================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>&copy; <span id="year"></span> HV Mídia. Todos os direitos reservados.</span>
+    <nav class="footer__links">
+      <a href="#portfolio">Portfólio</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- =========================================================================
+     FLOATING WHATSAPP BUTTON (fixed bottom-left, always visible)
+     WHATSAPP LINK: replace href="#" with https://wa.me/55XXXXXXXXXXX
+     ========================================================================= -->
+<a href="#" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <span class="whatsapp-float__icon">
+    <svg viewBox="0 0 32 32"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.35.68 4.55 1.86 6.4L4 29l7.77-1.8a11.94 11.94 0 0 0 4.25.78c6.63 0 12.02-5.4 12.02-12.02C28.04 8.4 22.65 3 16.02 3zm0 21.7c-1.34 0-2.63-.26-3.85-.76l-.28-.11-4.6 1.07 1.1-4.48-.19-.29a9.5 9.5 0 0 1-1.47-5.1c0-5.3 4.31-9.6 9.6-9.6a9.55 9.55 0 0 1 6.79 2.81 9.55 9.55 0 0 1 2.81 6.79c0 5.3-4.31 9.6-9.6 9.6l.69.07zm5.27-7.19c-.29-.15-1.7-.84-1.96-.94-.26-.1-.46-.14-.65.14-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.7-1.59-1.98-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.56-.89-2.14-.24-.57-.48-.49-.65-.5-.17-.01-.36-.01-.55-.01-.19 0-.5.07-.76.36-.26.29-1 1-1 2.42s1.02 2.8 1.16 2.99c.14.19 2 3.06 4.85 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/></svg>
+  </span>
+  <span class="whatsapp-float__text">Orce seu projeto pelo WhatsApp</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
